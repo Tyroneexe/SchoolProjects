@@ -102,6 +102,10 @@
             <Form>frmRoder</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="frmSignUp_u.pas">
+            <Form>frmSignUp</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>

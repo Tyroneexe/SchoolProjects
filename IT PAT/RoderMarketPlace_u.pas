@@ -12,7 +12,7 @@ type
     PageControl: TPageControl;
     tbsBuy: TTabSheet;
     tbsSell: TTabSheet;
-    pnlBuy: TPanel;
+    pnlWelcome: TPanel;
     pnlSell: TPanel;
     edtName: TEdit;
     edtPrice: TEdit;
@@ -21,7 +21,6 @@ type
     pnlPrice: TPanel;
     pnlLocation: TPanel;
     tbsCheckOut: TTabSheet;
-    imgLogo: TImage;
     pnlCheckOut: TPanel;
     pnlOfAllTime: TPanel;
     pnlRoderCut: TPanel;
@@ -31,10 +30,15 @@ type
     DarkModePopup: TPopupMenu;
     LigthMode1: TMenuItem;
     DarkMode1: TMenuItem;
+    pnlBuy: TPanel;
+    imgWelcomeIcon: TImage;
+    pnlWelcome2: TPanel;
+    Button1: TButton;
     procedure FormActivate(Sender: TObject);
     procedure btnThemeClick(Sender: TObject);
     procedure DarkMode1Click(Sender: TObject);
     procedure LigthMode1Click(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
   private
     { Private declarations }
     //Global Variables
@@ -50,9 +54,17 @@ implementation
 
 {$R *.dfm}
 
+uses frmSignUp_u;
+
 procedure TfrmRoder.btnThemeClick(Sender: TObject);
 begin
   DarkModePopup.Popup(Mouse.CursorPos.X, Mouse.CursorPos.Y);
+end;
+
+procedure TfrmRoder.Button1Click(Sender: TObject);
+begin
+  frmSignUp.Show;
+  frmRoder.Hide;
 end;
 
 procedure TfrmRoder.DarkMode1Click(Sender: TObject);
@@ -66,19 +78,29 @@ end;
 procedure TfrmRoder.FormActivate(Sender: TObject);
 var
 
-  primaryClr, secondaryClr : Cardinal; // Cardinal = unsigned 32-bit integer
+  primaryClr, secondaryClr, lightBlueClr : Cardinal; // Cardinal = unsigned 32-bit integer
 
 begin
   // Start of the application
 
+  //check if user has an account
+
+  frmRoder.Show;
+  frmSignUp.Hide;
+
   primaryClr := RGB(11, 49, 140);
   secondaryClr := RGB(216, 224, 242);
+  lightBlueClr := RGB(79, 149, 255);
 
   // Assign Position to Components
   pnlCheckOut.Left := PageControl.Width div 2 - pnlCheckOut.Width div 2;
-  imgLogo.Left := pnlCheckout.Left - 145;
-  pnlBuy.Left := PageControl.Width div 2 - pnlBuy.Width div 2;
+  pnlWelcome.Left := 30;
+  pnlBuy.Left := 30;
+  pnlBuy.Top := (pnlWelcome.Top + pnlWelcome.Height) - 10;
   pnlSell.Left := PageControl.Width div 2 - pnlSell.Width div 2;
+
+  imgWelcomeIcon.Left := (pnlWelcome.Left + pnlWelcome.Width);
+  pnlWelcome2.Left := (imgWelcomeIcon.Left + imgWelcomeIcon.Width) - 42;
 
 
   pnlName.Top := (pnlSell.Top + pnlSell.Height) + 20; //Bottom + 20
@@ -128,7 +150,8 @@ begin
   pnlFinalCheckoutPrice.Height := 50;
 
   // Assign Colors to Components
-  pnlBuy.Font.Color := primaryClr;
+  pnlWelcome.Font.Color := primaryClr;
+  pnlWelcome2.Font.Color := primaryClr;
   pnlSell.Font.Color := primaryClr;
   pnlCheckOut.Font.Color := primaryClr;
 
@@ -140,7 +163,8 @@ begin
   pnlPrice.Font.Color := primaryClr;
   pnlLocation.Font.Color := primaryClr;
 
-  pnlOfAllTime.Font.Color := RGB(79, 149, 255);
+  pnlOfAllTime.Font.Color := lightBlueClr;
+  pnlBuy.Font.Color := lightBlueClr;
 
   // Init Components
   pnlOfAllTime.Caption := 'Total Amount Ever Spent : ' + FloatToStrF(rOfAllTime, ffCurrency, 8, 2);
@@ -169,4 +193,3 @@ end.
 // Hints op die buttons
 // Validate wat die user doen
 // Retry (Clear the Buttons)
-// Take DIRECT Inspiration from Roder App
