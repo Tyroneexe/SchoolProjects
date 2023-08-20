@@ -1,9 +1,9 @@
 object frmSignUp: TfrmSignUp
-  Left = 694
-  Top = 145
-  Caption = 'Sign Up'
-  ClientHeight = 762
-  ClientWidth = 438
+  Left = 633
+  Top = 125
+  Caption = 'Roder Sign Up'
+  ClientHeight = 792
+  ClientWidth = 480
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -1038,26 +1038,39 @@ object frmSignUp: TfrmSignUp
     647E4604CC14F1C332D50280808C9C36F253235DCD73A68E8BF325FE3F3C5C12
     09369088150000000049454E44AE426082}
   Position = poDesigned
-  Visible = True
   OnCreate = FormCreate
   TextHeight = 15
   object imgBackground: TImage
-    Left = -6
+    Left = 0
     Top = 0
-    Width = 450
-    Height = 800
+    Width = 481
+    Height = 793
     Stretch = True
   end
   object imgWelcome: TImage
-    Left = 80
-    Top = 8
-    Width = 100
+    Left = 97
+    Top = 16
+    Width = 105
     Height = 105
     Stretch = True
   end
+  object lblAlreadyHaveAccount: TLabel
+    Left = 168
+    Top = 640
+    Width = 139
+    Height = 15
+    Caption = 'Already Have an Account?'
+  end
+  object lblCustomType: TLabel
+    Left = 280
+    Top = 449
+    Width = 79
+    Height = 15
+    Caption = 'Customer Type'
+  end
   object pnlWelcome: TPanel
-    Left = 176
-    Top = 20
+    Left = 208
+    Top = 28
     Width = 137
     Height = 81
     BevelOuter = bvNone
@@ -1070,75 +1083,9 @@ object frmSignUp: TfrmSignUp
     ParentFont = False
     TabOrder = 0
   end
-  object edtEmail: TEdit
-    Left = 128
-    Top = 418
-    Width = 200
-    Height = 30
-    TabOrder = 1
-  end
-  object edtPassword: TEdit
-    Left = 128
-    Top = 536
-    Width = 200
-    Height = 30
-    TabOrder = 2
-  end
-  object edtUserName: TEdit
-    Left = 128
-    Top = 318
-    Width = 200
-    Height = 30
-    TabOrder = 3
-  end
-  object pnlUserName: TPanel
-    Left = 96
-    Top = 250
-    Width = 121
-    Height = 41
-    BevelOuter = bvNone
-    Caption = 'User Name'
-    Font.Charset = ANSI_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -21
-    Font.Name = 'Roboto Lt'
-    Font.Style = [fsBold]
-    ParentFont = False
-    TabOrder = 4
-  end
-  object pnlEmail: TPanel
-    Left = 96
-    Top = 350
-    Width = 65
-    Height = 41
-    BevelOuter = bvNone
-    Caption = 'Email'
-    Font.Charset = ANSI_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -21
-    Font.Name = 'Roboto Lt'
-    Font.Style = [fsBold]
-    ParentFont = False
-    TabOrder = 5
-  end
-  object pnlPassword: TPanel
-    Left = 96
-    Top = 450
-    Width = 105
-    Height = 41
-    BevelOuter = bvNone
-    Caption = 'Password'
-    Font.Charset = ANSI_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -21
-    Font.Name = 'Roboto Lt'
-    Font.Style = [fsBold]
-    ParentFont = False
-    TabOrder = 6
-  end
   object pnlCreateAccount: TPanel
-    Left = 64
-    Top = 144
+    Left = 97
+    Top = 127
     Width = 257
     Height = 41
     BevelOuter = bvNone
@@ -1149,11 +1096,91 @@ object frmSignUp: TfrmSignUp
     Font.Name = 'Roboto Lt'
     Font.Style = [fsBold]
     ParentFont = False
+    TabOrder = 1
+  end
+  object pnlUserName: TPanel
+    Left = 168
+    Top = 186
+    Width = 121
+    Height = 41
+    BevelOuter = bvNone
+    Caption = 'User Name'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -21
+    Font.Name = 'Roboto Lt'
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 2
+  end
+  object pnlEmail: TPanel
+    Left = 192
+    Top = 262
+    Width = 65
+    Height = 41
+    BevelOuter = bvNone
+    Caption = 'Email'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -21
+    Font.Name = 'Roboto Lt'
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 3
+  end
+  object pnlPassword: TPanel
+    Left = 168
+    Top = 354
+    Width = 105
+    Height = 41
+    BevelOuter = bvNone
+    Caption = 'Password'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -21
+    Font.Name = 'Roboto Lt'
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 4
+  end
+  object edtUserName: TEdit
+    Left = 136
+    Top = 233
+    Width = 200
+    Height = 23
+    TabOrder = 5
+  end
+  object edtEmail: TEdit
+    Left = 120
+    Top = 309
+    Width = 200
+    Height = 23
+    TabOrder = 6
+  end
+  object edtPassword: TEdit
+    Left = 120
+    Top = 401
+    Width = 200
+    Height = 23
     TabOrder = 7
   end
+  object btbtnGeneratePassword: TBitBtn
+    Left = 326
+    Top = 401
+    Width = 28
+    Height = 23
+    Hint = 'Generate Custom Password'
+    Caption = '&'
+    Kind = bkRetry
+    NumGlyphs = 2
+    ParentShowHint = False
+    ShowHint = True
+    TabOrder = 8
+    OnClick = btbtnGeneratePasswordClick
+  end
   object btnCreateAccount: TButton
-    Left = 113
-    Top = 592
+    Left = 136
+    Top = 584
     Width = 200
     Height = 40
     Caption = 'Create Account'
@@ -1163,6 +1190,63 @@ object frmSignUp: TfrmSignUp
     Font.Name = 'Roboto'
     Font.Style = []
     ParentFont = False
-    TabOrder = 8
+    TabOrder = 9
+    OnClick = btnCreateAccountClick
+  end
+  object btnLogIn: TButton
+    Left = 168
+    Top = 661
+    Width = 118
+    Height = 28
+    Hint = 'Log In With Excisting Account'
+    Caption = 'Log In'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -21
+    Font.Name = 'Roboto'
+    Font.Style = []
+    ParentFont = False
+    ParentShowHint = False
+    ShowHint = True
+    TabOrder = 10
+    OnClick = btnLogInClick
+  end
+  object btbtnReset: TBitBtn
+    Left = 192
+    Top = 736
+    Width = 75
+    Height = 25
+    Hint = 'Reset the information'
+    Kind = bkRetry
+    NumGlyphs = 2
+    ParentShowHint = False
+    ShowHint = True
+    TabOrder = 11
+    OnClick = btbtnResetClick
+  end
+  object lsbCustomerType: TListBox
+    Left = 280
+    Top = 472
+    Width = 121
+    Height = 81
+    ItemHeight = 15
+    Items.Strings = (
+      'Buyer'
+      'Seller'
+      'Both'
+      'Just Browsing')
+    TabOrder = 12
+  end
+  object rgGender: TRadioGroup
+    Left = 64
+    Top = 448
+    Width = 185
+    Height = 105
+    Caption = 'Gender'
+    Items.Strings = (
+      'Male'
+      'Female'
+      'Prefer not to Say')
+    TabOrder = 13
   end
 end
