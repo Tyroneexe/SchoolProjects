@@ -10,6 +10,8 @@ type
     ADOConnection1: TADOConnection;
     ADOTable1: TADOTable;
     DataSource1: TDataSource;
+    ADOTable2: TADOTable;
+    DataSource2: TDataSource;
   private
     { Private declarations }
   public

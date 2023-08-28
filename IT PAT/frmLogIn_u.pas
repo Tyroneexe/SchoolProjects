@@ -34,7 +34,7 @@ implementation
 
 {$R *.dfm}
 
-uses frmRoder_u;
+uses frmRoder_u, frmSignUp_u;
 
 procedure TfrmLogIn.btbtnResetClick(Sender: TObject);
 begin
@@ -48,6 +48,7 @@ procedure TfrmLogIn.btnLogInClick(Sender: TObject);
 var
   sEmail, sPassword: string;
   bAccountFound, bPasswordCorrect: Boolean;
+  iConfirmLogIn : integer;
 
 begin
   // Check database for the account
@@ -71,19 +72,33 @@ begin
           if DataModule1.ADOTable1.FieldByName('Password').AsString = sPassword 
             then
               begin
-                ShowMessage('Log In Successful');
-                DataModule1.sUserID := DataModule1.ADOTable1.FieldByName('ID').AsString;
-                frmRoder.Show;
-                frmLogIn.Hide;
-                bAccountFound := True;
-                bPasswordCorrect := True;
-                Break; // Exit the loop if match is found
+                iConfirmLogIn :=  MessageDlg('Welcome Back! Successfully logged into your account!', TMsgDlgType.mtConfirmation, [mbOK, mbCancel], 0);
+                if iConfirmLogIn = mrOk
+                  then
+                    begin
+                    DataModule1.sUserID := DataModule1.ADOTable1.FieldByName('ID').AsString;
+                    frmRoder.Show;
+                    frmLogIn.Hide;
+                    bAccountFound := True;
+                    bPasswordCorrect := True;
+                    Break; // Exit the loop if match is found
+                  end
+                    else
+                      begin
+                        frmSignUp.Show;
+                        frmLogin.Hide;
+                        //Maak die variables true sodat die program weet dat die account daar is maar die user wil nie inlog nie
+                        bAccountFound := True;
+                        bPasswordCorrect := True;
+                        Break;
+                      end;
               end
               else
               begin
                 // Password is incorrect
                 bAccountFound := True;
-                Break; // Exit the loop if email exists but password is wrong
+                // Exit die loop if email exists but password is wrong
+                Break;
               end;
             end;
 
@@ -95,10 +110,12 @@ begin
   DataModule1.ADOTable1.Close;
 
   // If no account was found or password is incorrect
-  if not bAccountFound then
-    MessageDlg('No Account Was Found', TMsgDlgType.mtError, [mbOK, mbCancel], 0)
-  else if not bPasswordCorrect then
-    MessageDlg('Incorrect Password', TMsgDlgType.mtError, [mbOK, mbCancel], 0);
+  if not bAccountFound
+    then
+      MessageDlg('No Account Was Found', TMsgDlgType.mtError, [mbOK, mbCancel], 0)
+  else if not bPasswordCorrect
+    then
+      MessageDlg('Incorrect Password', TMsgDlgType.mtError, [mbOK, mbCancel], 0);
 
 end;
 

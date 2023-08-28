@@ -58,42 +58,53 @@ begin
   sUsername := edtUserName.Text;
   sEmail := edtEmail.Text;
 
-  sPassword := Uppercase(edtUserName.Text[Length(sUserName)]);
-
-  if sEmail.Contains('@')
+  //Check of edits nie empty is nie
+  if (not sUserName.IsEmpty) and (not sEmail.IsEmpty)
     then
       begin
-        iPosEmail := pos('@', sEmail);
-        cEmail := copy(sEmail, iPosEmail - 1, 1)[1]; //Char voor die @ teken
-        sPassword := sPassword + cEmail;
-        bVlag5 := true;
+      sPassword := Uppercase(edtUserName.Text[Length(sUserName)]);
+
+      if sEmail.Contains('@')
+        then
+          begin
+            iPosEmail := pos('@', sEmail);
+            cEmail := copy(sEmail, iPosEmail - 1, 1)[1]; //Char voor die @ teken
+            sPassword := sPassword + cEmail;
+            bVlag5 := true;
+          end
+        else
+          begin
+            MessageDlg('Not a valid Email', TMsgDlgType.mtError, [mbOK, mbCancel], 0);
+            edtEmail.Clear;
+            edtEmail.SetFocus;
+            Exit;
+          end;
+
+      while length(sPassword) < 8
+        do
+          begin
+            iRandom := RandomRange(0, Length(sEmail) - 1); // Random char vir sEmail
+            {ons minus een want dit begin by 0...5 chars is dan 0, 1, 2, 3, 4 maar die random range sluit 5 in so dit sal n error gooi}
+            insert(sEmail[iRandom + 1], sPassword, Length(sPassword) + 1); // Add 1 want dit begin by 0
+
+            iRandom := RandomRange(0, Length(sUserName) - 1);
+            insert(sUserName[iRandom + 1], sPassword, Length(sPassword) + 1);
+          end;
+
+      //wat, waarin, waar
+      insert(IntToStr(random(10)), sPassword, length(sPassword) + 1);
+
+      // Display the generated password
+      ShowMessage('Generated Password: ' + sPassword);
+
+      //Sit die password in die edt
+      edtPassword.Text := sPassword;
       end
-    else
-      begin
-        MessageDlg('Not a valid Email', TMsgDlgType.mtError, [mbOK, mbCancel], 0);
-        edtEmail.Clear;
-        edtEmail.SetFocus;
-      end;
-
-  while length(sPassword) < 8
-    do
-      begin
-        iRandom := RandomRange(0, Length(sEmail) - 1); // Random char vir sEmail
-      {ons minus een want dit begin by 0...5 chars is dan 0, 1, 2, 3, 4 maar die random range sluit 5 in so dit sal n error gooi}
-        insert(sEmail[iRandom + 1], sPassword, Length(sPassword) + 1); // Add 1 want dit begin by 0
-
-        iRandom := RandomRange(0, Length(sUserName) - 1);
-        insert(sUserName[iRandom + 1], sPassword, Length(sPassword) + 1);
-      end;
-
-  //wat, waarin, waar
-  insert(IntToStr(random(10)), sPassword, length(sPassword) + 1);
-
-  // Display the generated password
-  ShowMessage('Generated Password: ' + sPassword);
-
-  //Sit die password in die edt
-  edtPassword.Text := sPassword;
+        else
+          begin
+            MessageDlg('Username and email cannot be empty', TMsgDlgType.mtError, [mbOK, mbCancel], 0);
+            edtUserName.SetFocus;
+          end;
 end;
 
 procedure TfrmSignUp.btbtnResetClick(Sender: TObject);
@@ -240,9 +251,9 @@ begin
 
   btnCreateAccount.Left := (frmSignUp.Width div 2) - (btnCreateAccount.Width div 2);
 
-  btnLogIn.Width := btnCreateAccount.Width;
+  btnLogIn.Width := btnCreateAccount.Width - 50;
   btnLogIn.Height := btnCreateAccount.Height - 10;
-  btnLogIn.Left := btnCreateAccount.Left;
+  btnLogIn.Left := btnCreateAccount.Left + (50 div 2);
 
   btbtnReset.Left := (frmSignUp.Width div 2) - (btbtnReset.Width div 2);
 

@@ -33,4 +33,17 @@ object DataModule1: TDataModule1
     Left = 440
     Top = 176
   end
+  object ADOTable2: TADOTable
+    Active = True
+    Connection = ADOConnection1
+    CursorType = ctStatic
+    TableName = 'tblProducts'
+    Left = 272
+    Top = 264
+  end
+  object DataSource2: TDataSource
+    DataSet = ADOTable2
+    Left = 416
+    Top = 288
+  end
 end

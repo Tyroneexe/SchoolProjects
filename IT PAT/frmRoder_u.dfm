@@ -2,7 +2,7 @@ object frmRoder: TfrmRoder
   Left = 388
   Top = 249
   Caption = 'Roder Marketplace'
-  ClientHeight = 572
+  ClientHeight = 672
   ClientWidth = 1062
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -1041,21 +1041,77 @@ object frmRoder: TfrmRoder
   OnCreate = FormCreate
   TextHeight = 15
   object PageControl: TPageControl
-    Left = 0
-    Top = 0
-    Width = 1057
-    Height = 569
-    ActivePage = tbsBuy
+    Left = -6
+    Top = -1
+    Width = 1060
+    Height = 665
+    ActivePage = tbsSettings
     Style = tsButtons
     TabOrder = 0
     OnChange = PageControlChange
+    object tbsWelcome: TTabSheet
+      Caption = 'Welcome'
+      ImageIndex = 4
+      object imgLogoWelcome: TImage
+        Left = 316
+        Top = 424
+        Width = 150
+        Height = 150
+        Stretch = True
+      end
+      object pnlWelcome: TPanel
+        Left = 128
+        Top = 40
+        Width = 793
+        Height = 193
+        BevelOuter = bvNone
+        Caption = 'Welcome'
+        Font.Charset = ANSI_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -96
+        Font.Name = 'Ravie'
+        Font.Style = []
+        ParentFont = False
+        TabOrder = 0
+      end
+      object pnlOderWelcome: TPanel
+        Left = 472
+        Top = 448
+        Width = 297
+        Height = 118
+        BevelOuter = bvNone
+        Caption = 'oder'
+        Font.Charset = ANSI_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -96
+        Font.Name = 'Ravie'
+        Font.Style = []
+        ParentFont = False
+        TabOrder = 1
+      end
+      object pnlTo: TPanel
+        Left = 408
+        Top = 279
+        Width = 185
+        Height = 73
+        BevelOuter = bvNone
+        Caption = 'To'
+        Font.Charset = ANSI_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -64
+        Font.Name = 'Ravie'
+        Font.Style = []
+        ParentFont = False
+        TabOrder = 2
+      end
+    end
     object tbsBuy: TTabSheet
       Caption = 'Buy'
       object lblUserName: TLabel
-        Left = 239
-        Top = 12
+        Left = 119
+        Top = 20
         Width = 100
-        Height = 58
+        Height = 61
         Caption = 'User'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
@@ -1064,13 +1120,13 @@ object frmRoder: TfrmRoder
         Font.Style = [fsBold]
         ParentFont = False
       end
-      object pnlWelcome: TPanel
+      object pnlHey: TPanel
         Left = 16
         Top = 20
-        Width = 209
-        Height = 41
+        Width = 89
+        Height = 61
         BevelOuter = bvNone
-        Caption = 'Welcome'
+        Caption = 'Hey'
         Font.Charset = ANSI_CHARSET
         Font.Color = clWindowText
         Font.Height = -48
@@ -1090,6 +1146,19 @@ object frmRoder: TfrmRoder
         Height = 105
         Stretch = True
       end
+      object lblSellSomething: TLabel
+        Left = 256
+        Top = 152
+        Width = 370
+        Height = 44
+        Caption = 'Let'#39's Sell Something '
+        Font.Charset = ANSI_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -37
+        Font.Name = 'Roboto Lt'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
       object pnlOderSell: TPanel
         Left = 440
         Top = 32
@@ -1105,19 +1174,233 @@ object frmRoder: TfrmRoder
         ParentFont = False
         TabOrder = 0
       end
+      object pnlBrandName: TPanel
+        Left = 40
+        Top = 312
+        Width = 137
+        Height = 41
+        BevelOuter = bvNone
+        Caption = 'Brand Name'
+        Font.Charset = ANSI_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -24
+        Font.Name = 'Roboto'
+        Font.Style = []
+        ParentFont = False
+        TabOrder = 1
+      end
+      object pnlLocationPickup: TPanel
+        Left = 40
+        Top = 392
+        Width = 177
+        Height = 41
+        BevelOuter = bvNone
+        Caption = 'Location Pickup'
+        Font.Charset = ANSI_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -24
+        Font.Name = 'Roboto'
+        Font.Style = []
+        ParentFont = False
+        TabOrder = 2
+      end
+      object pnlPrice: TPanel
+        Left = 67
+        Top = 469
+        Width = 57
+        Height = 41
+        BevelOuter = bvNone
+        Caption = 'Price'
+        Font.Charset = ANSI_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -24
+        Font.Name = 'Roboto'
+        Font.Style = []
+        ParentFont = False
+        TabOrder = 3
+      end
+      object pnlCcBike: TPanel
+        Left = 32
+        Top = 535
+        Width = 73
+        Height = 41
+        BevelOuter = bvNone
+        Caption = 'CcBike'
+        Font.Charset = ANSI_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -24
+        Font.Name = 'Roboto'
+        Font.Style = []
+        ParentFont = False
+        TabOrder = 4
+      end
+      object pnlPartName: TPanel
+        Left = 32
+        Top = 248
+        Width = 112
+        Height = 41
+        BevelOuter = bvNone
+        Caption = 'Part Name'
+        Font.Charset = ANSI_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -24
+        Font.Name = 'Roboto'
+        Font.Style = []
+        ParentFont = False
+        TabOrder = 5
+      end
+      object grbProduct: TGroupBox
+        Left = 608
+        Top = 312
+        Width = 337
+        Height = 249
+        TabOrder = 6
+        object imgProductLogo: TImage
+          Left = 16
+          Top = 24
+          Width = 161
+          Height = 121
+          Stretch = True
+        end
+        object lblProductName: TLabel
+          Left = 200
+          Top = 32
+          Width = 106
+          Height = 23
+          Caption = 'Brand Name'
+          Font.Charset = ANSI_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -19
+          Font.Name = 'Roboto'
+          Font.Style = []
+          ParentFont = False
+        end
+        object lblProductCCBike: TLabel
+          Left = 200
+          Top = 72
+          Width = 66
+          Height = 23
+          Caption = 'CC Bike'
+          Font.Charset = ANSI_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -19
+          Font.Name = 'Roboto'
+          Font.Style = []
+          ParentFont = False
+        end
+        object lblProductLocationPickup: TLabel
+          Left = 16
+          Top = 176
+          Width = 138
+          Height = 23
+          Caption = 'Location Pickup'
+          Font.Charset = ANSI_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -19
+          Font.Name = 'Roboto'
+          Font.Style = []
+          ParentFont = False
+        end
+        object lblProductPrice: TLabel
+          Left = 152
+          Top = 216
+          Width = 44
+          Height = 23
+          Caption = 'Price'
+          Font.Charset = ANSI_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -19
+          Font.Name = 'Roboto'
+          Font.Style = []
+          ParentFont = False
+        end
+      end
+      object rgSellWhat: TRadioGroup
+        Left = 360
+        Top = 217
+        Width = 193
+        Height = 64
+        Caption = 'What are you Selling?'
+        Columns = 2
+        ItemIndex = 0
+        Items.Strings = (
+          'Bike'
+          'Part')
+        TabOrder = 7
+        OnClick = rgSellWhatClick
+      end
+      object sedtCC: TSpinEdit
+        Left = 154
+        Top = 549
+        Width = 200
+        Height = 24
+        MaxValue = 1900
+        MinValue = 50
+        TabOrder = 8
+        Value = 50
+      end
+      object edtPartName: TEdit
+        Left = 154
+        Top = 251
+        Width = 200
+        Height = 23
+        TabOrder = 9
+        OnChange = edtPartNameChange
+      end
+      object edtLocationPickup: TEdit
+        Left = 248
+        Top = 392
+        Width = 200
+        Height = 23
+        TabOrder = 10
+        OnChange = edtLocationPickupChange
+      end
+      object cbbBrandName: TComboBox
+        Left = 248
+        Top = 312
+        Width = 200
+        Height = 23
+        TabOrder = 11
+        Text = 'Brand Name'
+        OnChange = cbbBrandNameChange
+        Items.Strings = (
+          'BMW'
+          'Toyota'
+          'Honda'
+          'Suzuki'
+          'Yamaha'
+          'Harley Davidson')
+      end
+      object btnPreviewSell: TButton
+        Left = 416
+        Top = 596
+        Width = 150
+        Height = 25
+        Caption = 'Preview Product'
+        TabOrder = 12
+        OnClick = btnPreviewSellClick
+      end
+      object edtPrice: TEdit
+        Left = 154
+        Top = 483
+        Width = 200
+        Height = 23
+        TabOrder = 13
+        OnChange = edtPriceChange
+      end
     end
     object tbsCheckout: TTabSheet
       Caption = 'Checkout'
       ImageIndex = 2
       object imgLogoCheckout: TImage
-        Left = 257
+        Left = 233
         Top = 20
         Width = 105
         Height = 105
         Stretch = True
       end
       object lblTotalAllTime: TLabel
-        Left = 169
+        Left = 153
         Top = 144
         Width = 456
         Height = 44
@@ -1130,7 +1413,7 @@ object frmRoder: TfrmRoder
         ParentFont = False
       end
       object lblTotalAllTimeMoney: TLabel
-        Left = 655
+        Left = 639
         Top = 144
         Width = 100
         Height = 44
@@ -1144,7 +1427,7 @@ object frmRoder: TfrmRoder
       end
       object lblAmountInCheckout: TLabel
         Left = 39
-        Top = 248
+        Top = 272
         Width = 328
         Height = 38
         Caption = 'Amount in Checkout :'
@@ -1157,7 +1440,7 @@ object frmRoder: TfrmRoder
       end
       object lblAmountInCheckoutMoney: TLabel
         Left = 422
-        Top = 248
+        Top = 272
         Width = 86
         Height = 38
         Caption = 'R0,00'
@@ -1170,7 +1453,7 @@ object frmRoder: TfrmRoder
       end
       object lblRoderBTW: TLabel
         Left = 39
-        Top = 320
+        Top = 392
         Width = 337
         Height = 38
         Caption = 'Amount Roder Takes :'
@@ -1183,7 +1466,7 @@ object frmRoder: TfrmRoder
       end
       object lblRoderBTWMoney: TLabel
         Left = 401
-        Top = 320
+        Top = 392
         Width = 86
         Height = 38
         Caption = 'R0,00'
@@ -1196,7 +1479,7 @@ object frmRoder: TfrmRoder
       end
       object lblTotalAmountInCheckout: TLabel
         Left = 39
-        Top = 392
+        Top = 512
         Width = 415
         Height = 38
         Caption = 'Total Amount in Checkout :'
@@ -1209,7 +1492,7 @@ object frmRoder: TfrmRoder
       end
       object lblTotalAmountInCheckoutMoney: TLabel
         Left = 491
-        Top = 392
+        Top = 512
         Width = 86
         Height = 38
         Caption = 'R0,00'
@@ -1221,7 +1504,7 @@ object frmRoder: TfrmRoder
         ParentFont = False
       end
       object pnlOderCheckout: TPanel
-        Left = 368
+        Left = 344
         Top = 32
         Width = 137
         Height = 81
@@ -1236,7 +1519,7 @@ object frmRoder: TfrmRoder
         TabOrder = 0
       end
       object pnlCheckout: TPanel
-        Left = 520
+        Left = 496
         Top = 42
         Width = 289
         Height = 61
@@ -1263,7 +1546,7 @@ object frmRoder: TfrmRoder
       end
       object lblChangeTheme: TLabel
         Left = 401
-        Top = 168
+        Top = 264
         Width = 152
         Height = 25
         Caption = 'Change Theme'
@@ -1275,8 +1558,8 @@ object frmRoder: TfrmRoder
         ParentFont = False
       end
       object lblLogOut: TLabel
-        Left = 432
-        Top = 272
+        Left = 440
+        Top = 384
         Width = 81
         Height = 25
         Caption = 'Log Out'
@@ -1289,10 +1572,23 @@ object frmRoder: TfrmRoder
       end
       object lblChangeName: TLabel
         Left = 401
-        Top = 376
+        Top = 496
         Width = 195
         Height = 25
         Caption = 'Change User Name'
+        Font.Charset = ANSI_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -21
+        Font.Name = 'Roboto Lt'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object lblSeeAccInfo: TLabel
+        Left = 136
+        Top = 264
+        Width = 132
+        Height = 25
+        Caption = 'Account Info'
         Font.Charset = ANSI_CHARSET
         Font.Color = clWindowText
         Font.Height = -21
@@ -1316,8 +1612,8 @@ object frmRoder: TfrmRoder
         TabOrder = 0
       end
       object btnLogOut: TButton
-        Left = 424
-        Top = 312
+        Left = 432
+        Top = 424
         Width = 107
         Height = 25
         Caption = 'Log Out'
@@ -1326,7 +1622,7 @@ object frmRoder: TfrmRoder
       end
       object btnChangeUserName: TButton
         Left = 432
-        Top = 416
+        Top = 536
         Width = 121
         Height = 25
         Caption = 'Change User Name'
@@ -1335,7 +1631,7 @@ object frmRoder: TfrmRoder
       end
       object rgChangeTheme: TRadioGroup
         Left = 401
-        Top = 199
+        Top = 303
         Width = 185
         Height = 42
         Columns = 2
@@ -1344,6 +1640,43 @@ object frmRoder: TfrmRoder
           'Dark Mode')
         TabOrder = 3
         OnClick = rgChangeThemeClick
+      end
+      object pnlSettings: TPanel
+        Left = 369
+        Top = 152
+        Width = 240
+        Height = 73
+        BevelOuter = bvNone
+        Caption = 'Settings'
+        Font.Charset = ANSI_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -64
+        Font.Name = 'Roboto Bk'
+        Font.Style = []
+        ParentFont = False
+        TabOrder = 4
+      end
+      object btnSeeAccInfo: TButton
+        Left = 155
+        Top = 303
+        Width = 89
+        Height = 25
+        Caption = 'Account Info'
+        TabOrder = 5
+        OnClick = btnSeeAccInfoClick
+      end
+      object redtAccInfo: TRichEdit
+        Left = 34
+        Top = 360
+        Width = 361
+        Height = 201
+        Font.Charset = ANSI_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -12
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentFont = False
+        TabOrder = 6
       end
     end
   end
