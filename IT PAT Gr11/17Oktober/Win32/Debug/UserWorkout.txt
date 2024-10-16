@@ -1,0 +1,14 @@
+Monday:
+Chest and Triceps
+Tuesday:
+Back and Biceps
+Wednesday:
+Rest
+Thursday:
+Legs
+Friday:
+Chest
+Saturday:
+Back
+Sunday:
+Rest
