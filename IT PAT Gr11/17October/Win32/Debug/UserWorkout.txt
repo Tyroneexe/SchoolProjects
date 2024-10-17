@@ -1,0 +1,23 @@
+Monday:
+Chest
+Triceps
+Forearms
+Tuesday:
+Rest
+Wednesday:
+Back
+Biceps
+Shoulders
+Thursday:
+Rest
+Friday:
+Upper Body
+Arms
+Back
+Chest
+Saturday:
+Lower Body
+Legs
+Hamstrings
+Sunday:
+Rest
