@@ -1,31 +1,35 @@
-# School Projects
+# 🎓 School Projects by Tiaan Bothma
 
-This repository contains a collection of my school projects. Each project is organized into its own directory with a separate text file explaining its purpose and usage.
+Welcome to my collection of school projects! Each project is uniquely organized into its own directory, accompanied by detailed documentation outlining its purpose and how to use it. Dive in and explore my work throughout my academic journey.
 
-## Project Structure
+## 📂 Project Structure
 
-The repository follows a structured organization, with each project having its own directory. Inside each project directory, you can find the source code and any associated documentation.
+Every project has its own directory containing:
+- **Source code** 💻
+- **Documentation** 📄: A text file in each project folder that explains the project’s goal, how to use it, and any important notes or requirements.
 
-Feel free to navigate through the projects to explore the work I've done during my studies.
+Feel free to browse around and explore!
 
-## Usage
+## 🚀 Usage
 
-To explore a specific project, navigate to its directory and refer to the project's individual text file. The file will provide details about the project, including its purpose, usage instructions, and any additional notes or requirements.
+To view a specific project:
+1. Navigate to its directory.
+2. Open the corresponding text file for all the necessary details, including usage instructions, project goals, and any prerequisites.
 
-## Credits
-This School Projects were developed by Tiaan Bothma.
-You can find more of my work on my Fiverr gig 
-https://www.fiverr.com/totallyt484/build-a-mobile-app-using-flutter-with-a-database
-and at
-https://www.fiverr.com/totallyt484/code-your-c-sharp-and-python-projects.
+## 🙌 Credits
 
-## Contributing
+All projects have been developed by **Tiaan Bothma**. You can find more of my work on my Fiverr gigs:
+- [LinkedIn Profile]([https://www.fiverr.com/totallyt484/code-your-c-sharp-and-python-projects](https://www.linkedin.com/in/tiaan-bothma-0b1bb3283/)) 🖥️
+- [Mobile App Development in Flutter](https://www.fiverr.com/totallyt484/build-a-mobile-app-using-flutter-with-a-database) 📱
 
-This repository is for personal use and intended to showcase my school projects. But, contributions will still be appreciated. If you have any suggestions or feedback, feel free to reach out to me.
+## 🌱 Contributing
 
-## License
-These projects are licensed under the NONE license. Which means that the author or owner of the project has not explicitly granted any permissions or rights to others to use or distribute their code.
+While this repository is primarily for personal use, showcasing my school projects, feedback and contributions are always appreciated! Feel free to reach out if you have any suggestions or want to collaborate.
 
-## Contact
+## 🛡️ License
 
-If you have any questions or would like to get in touch, you can reach me at [tvzbothma@gmail.com].
+These projects are licensed under the **NONE** license. This means no explicit permissions or rights are granted for usage or distribution of the code, unless otherwise stated.
+
+## 📬 Contact
+
+Got any questions or want to get in touch? Reach out to me at **[tvzbothma@gmail.com](mailto:tvzbothma@gmail.com)**. I'd love to connect!
